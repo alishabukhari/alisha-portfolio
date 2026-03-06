@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="supabaseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3ECF8E"/>
+      <stop offset="100%" stop-color="#2E8B57"/>
+    </linearGradient>
+  </defs>
+
+  <!-- top triangle -->
+  <path
+    d="M40 140 L110 40 Q120 30 135 30 H170 Q190 30 200 50 L140 140 Z"
+    fill="#3ECF8E"
+  />
+
+  <!-- bottom triangle -->
+  <path
+    d="M140 140 L200 50 Q210 70 210 100 V170 Q210 190 190 200 L140 200 Z"
+    fill="#2E8B57"
+  />
+</svg>
