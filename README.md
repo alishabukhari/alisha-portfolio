@@ -1,36 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Alisha Bukhari — Developer Portfolio
+Full-stack developer and computer engineering student building AI-driven software products and interactive web applications.
 
-## Getting Started
+🌐 **Live Website**  
+👉 https://alisha-portfolio-phi.vercel.app/
 
-First, run the development server:
+---
+## Preview
+
+![Portfolio Preview](./public/projects/portfolio.png)
+
+---
+
+## About
+
+This is my personal developer portfolio built to showcase my projects, technical skills, and software engineering experience.
+
+I am a **Computer Engineering student at Ilia State University** focused on building intelligent systems and scalable software products.
+
+My work combines:
+
+• AI-driven applications  
+• Full-stack web development  
+• Embedded systems projects  
+• UI/UX product design  
+
+---
+
+## Tech Stack
+
+This portfolio is built using modern web technologies:
+
+- **Next.js**
+- **React**
+- **TypeScript**
+- **TailwindCSS**
+- **Framer Motion**
+- **Vercel (Deployment)**
+
+---
+
+## Features
+
+The portfolio includes:
+
+• Animated hero section with typing effect  
+• Interactive tech orbit animation  
+• Responsive modern UI design  
+• Project showcase with modal details  
+• Smooth scroll navigation  
+• Skills visualization with animated progress bars  
+• Contact form integration  
+
+---
+
+## Projects Featured
+
+The website highlights several of my technical projects:
+
+### CareerGPS
+AI-powered career roadmap platform designed to guide users through structured learning paths.
+
+### Self-Balancing Seesaw
+Embedded systems project using **STM32**, **PID control**, and **MPU6050 IMU** to balance a motor-driven seesaw.
+
+### RFID Attendance System
+RFID-based attendance logger with **RTC timestamps** and **EEPROM storage**.
+
+### Pygame Chess
+Two-player chess game built in Python with rule validation and move highlighting.
+
+### UI/UX Designs
+Mobile and web interface designs created in **Figma** including:
+
+• Wanderlust travel UI  
+• CraveMore food ordering app  
+
+---
+
+## Getting Started (Local Development)
+
+Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/alishabukhari/alisha-portfolio.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Install dependencies:
+```
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Run the development server: 
+```
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Open:
+```
+http://localhost:3000
+```
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+The portfolio is deployed using Vercel.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Every push to the main branch automatically triggers a new deployment.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contact
 
-## Deploy on Vercel
+If you'd like to connect or collaborate:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+📧 Email
+alishabuk12@gmail.com
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+💼 LinkedIn
+https://www.linkedin.com/in/alisha-bukhari/
+
+💻 GitHub
+https://github.com/alishabukhari
