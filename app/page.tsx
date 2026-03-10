@@ -136,10 +136,44 @@ export default function Home() {
   const [sent, setSent] = useState(false);
   const [showTop, setShowTop] = useState(false);
   const [mounted, setMounted] = useState(false);
+  
+  const [text, setText] = useState("");
+  const [index, setIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [charIndex, setCharIndex] = useState(0);
+  
+  const titles = [
+    "Computer Engineer",
+  ];
 
 useEffect(() => {
   setMounted(true);
 }, []);
+
+useEffect(() => {
+  const current = titles[index];
+
+  const timeout = setTimeout(() => {
+    if (!isDeleting) {
+      setText(current.substring(0, charIndex + 1));
+      setCharIndex(charIndex + 1);
+
+      if (charIndex + 1 === current.length) {
+        setIsDeleting(true);
+      }
+    } else {
+      setText(current.substring(0, charIndex - 1));
+      setCharIndex(charIndex - 1);
+
+      if (charIndex === 0) {
+        setIsDeleting(false);
+        setIndex((index + 1) % titles.length);
+      }
+    }
+  }, isDeleting ? 70 : 140);
+
+  return () => clearTimeout(timeout);
+}, [charIndex, isDeleting, index]);
 
 if (!mounted) return null;
 
@@ -222,8 +256,12 @@ if (!mounted) return null;
                   Hi, I'm <span className="text-red-500">Alisha</span>
                 </h1>
 
-                <p className="mt-4 text-xl text-red-500">
-                  Computer Engineer
+                <p className="text-red-500 text-xl h-[28px]">
+                  {text}
+                </p>
+
+                <p className="text-white/60 text-sm mt-2">
+                  Aspiring AI Software Engineer
                 </p>
 
                 <p className="mt-6 text-white/60 max-w-md leading-relaxed">
@@ -261,14 +299,13 @@ if (!mounted) return null;
                   shadow-[0_0_0px_rgba(255,0,0,0),0_0_0px_rgba(255,0,0,0)]"></div>
 
                   {/* PROFILE IMAGE */}
-                  <div className="relative rounded-full overflow-hidden border border-white/20 z-10">
+                  <div className="relative w-[240px] h-[240px] rounded-full overflow-hidden border border-white/20 z-10">
                   
                       <Image
-                        src="/myphoto.jpg"
+                        src="/myphoto.jpeg"
                         alt="profile"
-                        width={220}
-                        height={220}
-                        className="object-cover rounded-full"
+                        fill
+                        className="object-cover"
                       />
                     
                   </div>
@@ -370,7 +407,7 @@ if (!mounted) return null;
                 <div className="relative w-[240px] h-[240px] rounded-2xl overflow-hidden border border-white/10">
 
                   <Image
-                    src="/myphoto.jpg"
+                    src="/myphoto.jpeg"
                     alt="Alisha"
                     fill
                     className="object-cover"
