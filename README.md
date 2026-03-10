@@ -118,3 +118,8 @@ https://www.linkedin.com/in/alisha-bukhari/
 
 💻 GitHub
 https://github.com/alishabukhari
+
+---
+
+⭐ If you like this project, consider starring the repository.
+
