@@ -1154,10 +1154,7 @@ if (!mounted) return null;
                   action="https://formsubmit.co/alishabuk12@gmail.com"
                   method="POST"
                   className="space-y-6"
-                  onSubmit={(e) => {
-                    setSent(true);
-                    setTimeout(() => setSent(false), 4000);
-                  }}
+                  onSubmit={() => setSent(true)}
                 >
 
                   <input type="hidden" name="_captcha" value="false" />
