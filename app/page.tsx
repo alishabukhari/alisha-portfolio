@@ -1151,19 +1151,19 @@ if (!mounted) return null;
                 </div>
               ) : (
                 <form
-                    action="https://formsubmit.co/alishabuk12@gmail.com"
-                    method="POST"
-                    className="space-y-6"
-                    onSubmit={() => {
-                      setSent(true);
-                      setTimeout(() => setSent(false), 4000);
-                    }}
-                  >
+                  action="https://formsubmit.co/alishabuk12@gmail.com"
+                  method="POST"
+                  className="space-y-6"
+                  onSubmit={(e) => {
+                    setSent(true);
+                  }}
+                >
 
                   <input type="hidden" name="_captcha" value="false" />
                   <input type="hidden" name="_subject" value="New Portfolio Message!" />
                   <input type="hidden" name="_template" value="table" />
                   <input type="hidden" name="_next" value="https://alisha-portfolio-phi.vercel.app/" />
+                  <input type="hidden" name="_replyto" />
 
                   <input
                     type="text"
