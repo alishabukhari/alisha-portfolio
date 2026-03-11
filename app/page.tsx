@@ -1156,6 +1156,7 @@ if (!mounted) return null;
                   className="space-y-6"
                   onSubmit={(e) => {
                     setSent(true);
+                    setTimeout(() => setSent(false), 4000);
                   }}
                 >
 
