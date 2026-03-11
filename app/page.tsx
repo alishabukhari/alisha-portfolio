@@ -5,6 +5,7 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import { X, Github, ExternalLink } from "lucide-react";
 import { useEffect } from "react";
+import emailjs from "@emailjs/browser";
 
   function OrbitIcon({ src, size = 20 }: { src: string; size?: number }) {
     return (
@@ -1151,17 +1152,25 @@ if (!mounted) return null;
                 </div>
               ) : (
                 <form
-                  action="https://formsubmit.co/alishabuk12@gmail.com"
-                  method="POST"
                   className="space-y-6"
-                  onSubmit={() => setSent(true)}
-                >
+                  onSubmit={(e) => {
+                    e.preventDefault();
 
-                  <input type="hidden" name="_captcha" value="false" />
-                  <input type="hidden" name="_subject" value="New Portfolio Message!" />
-                  <input type="hidden" name="_template" value="table" />
-                  <input type="hidden" name="_next" value="https://alisha-portfolio-phi.vercel.app/" />
-                  <input type="hidden" name="_replyto" />
+                    emailjs.sendForm(
+                      "service_toqlwrv",
+                      "template_w0krleb",
+                      e.target,
+                      "LwHhZMH82Vjiyvioz"
+                    ).then(
+                      () => {
+                        setSent(true);
+                      },
+                      (error) => {
+                        console.log(error);
+                      }
+                    );
+                  }}
+                >
 
                   <input
                     type="text"
