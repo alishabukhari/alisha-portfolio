@@ -6,7 +6,7 @@ import Image from "next/image";
 import { X, Github, ExternalLink } from "lucide-react";
 import { useEffect } from "react";
 
-  function OrbitIcon({ src, size = 18 }: { src: string; size?: number }) {
+  function OrbitIcon({ src, size = 20 }: { src: string; size?: number }) {
     return (
       <div className="w-10 h-10 rounded-full bg-black border border-red-500/60
       flex items-center justify-center
@@ -102,7 +102,7 @@ export default function Home() {
     description: "Interactive developer portfolio built with Next.js.",
     desc: "Personal developer portfolio built with Next.js, TailwindCSS, and Framer Motion to showcase projects, technical skills, and design work through a modern interactive interface.",
     tech: ["CSS", "Next.js", "TailwindCSS"],
-    github: "#",
+    github: "https://github.com/alishabukhari/alisha-portfolio",
     
   }
   ];
@@ -185,9 +185,9 @@ if (!mounted) return null;
         {/* NAVBAR */}
         <div className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/40 border-b border-white/10">
 
-          <div className="max-w-6xl mx-auto flex justify-between items-center px-8 md:px-24 py-6">
+          <div className="max-w-7xl mx-auto flex items-center justify-between px-8 md:px-24 py-6">
 
-            <div className="flex gap-10 text-sm tracking-wide items-center">
+            <div className="flex gap-10 text-sm tracking-wide items-center ml-2">
             
                 <a
                   href="#home"
@@ -231,7 +231,7 @@ if (!mounted) return null;
 
             <a
               href="#contact"
-              className="px-6 py-2 border border-white/30 rounded-full text-sm
+              className="px-6 py-2 border border-white/30 rounded-full text-sm ml-auto
               hover:border-red-500 hover:text-red-400
               hover:shadow-[0_0_12px_rgba(255,0,0,0.5)]
               transition duration-300"
@@ -315,7 +315,7 @@ if (!mounted) return null;
                 <div className="absolute w-[340px] h-[340px] animate-spin-slow pointer-events-none">
 
                   {/* REACT */}
-                  <div className="absolute top-2 left-1/2 -translate-x-1/2">
+                  <div className="absolute top-1 left-1/2 -translate-x-1/2">
                   <OrbitIcon src="/icons/react.svg" />
                   </div>
 
@@ -330,22 +330,22 @@ if (!mounted) return null;
                   </div>
 
                   {/* next */}
-                  <div className="absolute bottom-[15%] right-[15%]">
+                  <div className="absolute bottom-[15%] right-[12%]">
                   <OrbitIcon src="/icons/next.svg" />
                   </div>
 
                   {/* c++ ICON */}
-                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2">
+                  <div className="absolute bottom-1 left-1/2 -translate-x-1/2">
                   <OrbitIcon src="/icons/c.svg" />
                   </div>
 
                   {/* JS */}
-                  <div className="absolute bottom-[15%] left-[15%]">
+                  <div className="absolute bottom-[15%] left-[12%]">
                   <OrbitIcon src="/icons/javascript.svg" />
                   </div>
 
                   {/* GIT */}
-                  <div className="absolute top-1/2 left-[2%] -translate-y-1/2">
+                  <div className="absolute top-1/2 left-[1%] -translate-y-1/2">
                   <OrbitIcon src="/icons/git.svg" />
                   </div>
 
@@ -969,7 +969,7 @@ if (!mounted) return null;
 
               {/* EMAIL */}
 
-              <div className="flex items-center gap-3 group">
+              <div className="flex items-center gap-3">
 
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -977,7 +977,7 @@ if (!mounted) return null;
                   height="22"
                   fill="currentColor"
                   viewBox="0 0 24 24"
-                  className="text-white transition group-hover:text-red-400 group-hover:scale-110"
+                  className="text-white"
                 >
                   <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 
                   1.1.9 2 2 2h16c1.1 0 2-.9 
@@ -985,12 +985,7 @@ if (!mounted) return null;
                   4-8 5-8-5V6l8 5 8-5v2z"/>
                 </svg>
 
-                <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=alishabuk12@gmail.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:text-red-400 transition cursor-pointer"
-                >
+                <a>
                   alishabuk12@gmail.com
                 </a>
 
@@ -1006,7 +1001,7 @@ if (!mounted) return null;
                   height="22"
                   fill="currentColor"
                   viewBox="0 0 24 24"
-                  className="text-white transition group-hover:text-red-400 group-hover:scale-110"
+                  className="text-white"
                 >
                   <path d="M20.52 3.48A11.94 11.94 0 0012.05 0C5.4 0 .02 5.37.02 12c0 
                   2.11.55 4.18 1.6 6.02L0 24l6.2-1.63A11.93 11.93 0 
@@ -1019,11 +1014,8 @@ if (!mounted) return null;
                   3 .14.19 2.03 3.1 4.92 4.35.69.3 1.23.48 1.65.61.69.22 
                   1.32.19 1.82.12.56-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.33z"/>
                 </svg>
-
-                <a
-                  href="tel:+995568107278"
-                  className="hover:text-red-400 transition"
-                >
+                
+                <a>
                   +995 568 107 278
                 </a>
 
@@ -1039,7 +1031,7 @@ if (!mounted) return null;
                   height="22"
                   fill="currentColor"
                   viewBox="0 0 24 24"
-                  className="text-white transition group-hover:text-red-400 group-hover:scale-110"
+                  className="text-white"
                 >
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 
                   13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 
@@ -1048,7 +1040,7 @@ if (!mounted) return null;
                   2.5S13.38 11.5 12 11.5z"/>
                 </svg>
 
-                <span className="text-white/70">Tbilisi, Georgia</span>
+                <span className="text-white">Tbilisi, Georgia</span>
 
               </div>
 
@@ -1110,6 +1102,31 @@ if (!mounted) return null;
 
               </a>
 
+              
+              {/* GMAIL */}
+
+              <a
+                href="mailto:alishabuk12@gmail.com"
+                className="group w-12 h-12 flex items-center justify-center border border-white/10 rounded-full
+                text-white/80 hover:border-red-500
+                hover:shadow-[0_0_20px_rgba(255,0,0,0.4)]
+                transition duration-300 cursor-pointer z-10"
+              >
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                className="pointer-events-none transition-colors duration-300 group-hover:text-red-400"
+              >
+                <path d="M12 13.5L2 6.75V18h20V6.75L12 13.5zm10-9H2l10 6.75L22 4.5z"/>
+              </svg>
+
+              </a>
+
+
             </div>
 
           </div>
@@ -1144,7 +1161,9 @@ if (!mounted) return null;
                   >
 
                   <input type="hidden" name="_captcha" value="false" />
-                  <input type="hidden" name="_next" value="https://yourwebsite.com" />
+                  <input type="hidden" name="_subject" value="New Portfolio Message!" />
+                  <input type="hidden" name="_template" value="table" />
+                  <input type="hidden" name="_next" value="https://alisha-portfolio-phi.vercel.app/" />
 
                   <input
                     type="text"
