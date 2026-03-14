@@ -3,7 +3,7 @@
 import { motion, Variants } from "framer-motion";
 import { useRef, useState } from "react";
 import Image from "next/image";
-import { X, Github, ExternalLink } from "lucide-react";
+import { X, Github, ExternalLink, Menu } from "lucide-react";
 import { useEffect } from "react";
 import emailjs from "@emailjs/browser";
 
@@ -146,6 +146,7 @@ export default function Home() {
   const titles = [
     "Computer Engineer",
   ];
+  const [menuOpen, setMenuOpen] = useState(false);
 
 useEffect(() => {
   setMounted(true);
@@ -187,6 +188,13 @@ if (!mounted) return null;
         <div className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/40 border-b border-white/10">
 
           <div className="max-w-7xl mx-auto flex items-center justify-between px-8 md:px-24 py-6">
+            {/* MOBILE HAMBURGER */}
+            <button
+              className="md:hidden text-white"
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
+              {menuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
 
             <div className="hidden md:flex gap-10 text-sm tracking-wide items-center ml-2">
             
@@ -242,6 +250,61 @@ if (!mounted) return null;
 
           </div>
         </div>
+
+        {menuOpen && (
+          <div className="md:hidden fixed top-20 left-0 w-full bg-black border-b border-white/10 z-40">
+
+            <div className="flex flex-col items-center gap-8 py-8 text-sm">
+
+              <a
+                href="#home"
+                onClick={() => setMenuOpen(false)}
+                className="relative inline-block text-white/70 hover:text-red-400 transition-colors duration-300 group"
+              >
+                Home
+                <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-red-500 transition-all duration-300 ease-out group-hover:w-full"></span>
+              </a>
+
+              <a
+                href="#about"
+                onClick={() => setMenuOpen(false)}
+                className="relative inline-block text-white/70 hover:text-red-400 transition-colors duration-300 group"
+              >
+                About
+                <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-red-500 transition-all duration-300 ease-out group-hover:w-full"></span>
+              </a>
+
+              <a
+                href="#skills"
+                onClick={() => setMenuOpen(false)}
+                className="relative inline-block text-white/70 hover:text-red-400 transition-colors duration-300 group"
+              >
+                Skills
+                <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-red-500 transition-all duration-300 ease-out group-hover:w-full"></span>
+              </a>
+
+              <a
+                href="#projects"
+                onClick={() => setMenuOpen(false)}
+                className="relative inline-block text-white/70 hover:text-red-400 transition-colors duration-300 group"
+              >
+                Projects
+                <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-red-500 transition-all duration-300 ease-out group-hover:w-full"></span>
+              </a>
+
+              <a
+                href="#contact"
+                onClick={() => setMenuOpen(false)}
+                className="relative inline-block text-white/70 hover:text-red-400 transition-colors duration-300 group"
+              >
+                Contact
+                <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-red-500 transition-all duration-300 ease-out group-hover:w-full"></span>
+              </a>
+
+            </div>
+
+          </div>
+        )}
 
 
         {/* HERO */}
