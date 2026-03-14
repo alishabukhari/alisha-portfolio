@@ -179,7 +179,7 @@ useEffect(() => {
 if (!mounted) return null;
 
   return (
-    <main className="relative w-full min-h-screen bg-black text-white pt-28 scroll-smooth">
+    <main className="relative w-full min-h-[100vh] overflow-y-hidden bg-black text-white pt-28 scroll-smooth">
 
       <div className="relative z-10 flex flex-col">
 
@@ -562,7 +562,7 @@ if (!mounted) return null;
           <div className="mb-20">
 
             <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
-              Skills
+              Technical <span className="text-red-500">Skills</span>
             </h2>
 
             <div className="w-24 h-[2px] bg-red-500 mt-4"></div>
@@ -577,7 +577,7 @@ if (!mounted) return null;
 
             {/* ================= FRONTEND ================= */}
 
-            <div className="p-8 rounded-2xl border border-white/10 bg-white/[0.02]
+            <div className="p-6 md:p-8 rounded-2xl border border-white/10 bg-black/40
             backdrop-blur-md hover:border-red-500/60 transition
             hover:shadow-[0_10px_40px_rgba(255,0,0,0.25)]">
 
@@ -602,15 +602,15 @@ if (!mounted) return null;
                     <div className="flex items-center gap-2">
 
                       {/* WHITE DOT */}
-                      <span className="w-2 h-2 bg-white rounded-full"></span>
+                      <span className="w-1.5 h-1.5 bg-white rounded-full"></span>
 
-                      <span className="text-white/80">
+                      <span className="text-white/90">
                         {skill.name}
                       </span>
 
                     </div>
 
-                    <span className="text-white/40">
+                    <span className="text-white/50">
                       {skill.level}%
                     </span>
 
@@ -627,8 +627,8 @@ if (!mounted) return null;
                       viewport={{ once: true }}
                       transition={{ duration: 1.2, ease: "easeOut", delay: i * 0.1 }}
                       className="h-full rounded-full bg-gradient-to-r
-                      from-red-300 via-red-500 to-red-600
-                      shadow-[0_0_12px_rgba(255,0,0,0.6)]"
+                      from-red-600 via-red-500 to-red-400
+                      shadow-[0_0_10px_rgba(255,0,0,0.4)]"
                     />
 
                   </div>
@@ -643,7 +643,7 @@ if (!mounted) return null;
 
             {/* ================= BACKEND ================= */}
 
-            <div className="p-8 rounded-2xl border border-white/10 bg-white/[0.02]
+            <div className="p-6 md:p-8 rounded-2xl border border-white/10 bg-black/40
             backdrop-blur-md hover:border-red-500/60 transition
             hover:shadow-[0_10px_40px_rgba(255,0,0,0.25)]">
 
@@ -666,15 +666,15 @@ if (!mounted) return null;
                     <div className="flex items-center gap-2">
 
                       {/* WHITE DOT */}
-                      <span className="w-2 h-2 bg-white rounded-full"></span>
+                      <span className="w-1.5 h-1.5 bg-white rounded-full"></span>
 
-                      <span className="text-white/80">
+                      <span className="text-white/90">
                         {skill.name}
                       </span>
 
                     </div>
 
-                    <span className="text-white/40">
+                    <span className="text-white/50">
                       {skill.level}%
                     </span>
 
@@ -688,8 +688,8 @@ if (!mounted) return null;
                       viewport={{ once: true }}
                       transition={{ duration: 1.2, ease: "easeOut", delay: i * 0.1 }}
                       className="h-full rounded-full bg-gradient-to-r
-                      from-red-300 via-red-500 to-red-600
-                      shadow-[0_0_12px_rgba(255,0,0,0.6)]"
+                      from-red-600 via-red-500 to-red-400
+                      shadow-[0_0_10px_rgba(255,0,0,0.4)]"
                     />
 
                   </div>
@@ -704,7 +704,7 @@ if (!mounted) return null;
 
             {/* ================= TOOLS ================= */}
 
-            <div className="p-8 rounded-2xl border border-white/10 bg-white/[0.02]
+            <div className="p-6 md:p-8 rounded-2xl border border-white/10 bg-black/40
             backdrop-blur-md hover:border-red-500/60 transition
             hover:shadow-[0_10px_40px_rgba(255,0,0,0.25)]">
 
@@ -732,7 +732,7 @@ if (!mounted) return null;
                   <div
                     key={i}
                     className="flex items-center gap-2 px-3 py-2 text-sm rounded-lg
-                    border border-white/10 bg-white/[0.03]
+                    border border-white/10 bg-black/40
                     hover:border-red-500 hover:text-red-400
                     hover:shadow-[0_0_15px_rgba(255,0,0,0.3)]
                     transition cursor-default"
@@ -789,14 +789,14 @@ if (!mounted) return null;
                   key={i}
                   whileHover={{ y: -12 }}
                   transition={{ type: "spring", stiffness: 200 }}
-                  className="relative rounded-2xl border border-white/10 bg-white/[0.03]
-                  backdrop-blur-md p-6 transition hover:border-red-500/60
-                  hover:shadow-[0_10px_40px_rgba(255,0,0,0.25)]"
+                  className="relative rounded-2xl border border-white/10 bg-[#0b0b0b]
+                  backdrop-blur-md p-5 transition hover:border-red-500/60
+                  hover:shadow-[0_20px_60px_rgba(255,0,0,0.25)]"
                 >
 
                   {/* PROJECT IMAGE */}
 
-                <div className="relative w-full h-[180px] rounded-xl overflow-hidden mb-5 group">
+                 <div className="relative w-full h-[180px] rounded-xl overflow-hidden mb-5 group">
 
                   <Image
                     src={project.image}
@@ -805,9 +805,12 @@ if (!mounted) return null;
                     className="object-cover transition duration-500 group-hover:scale-110"
                   />
 
-                  {/* DARK GRADIENT OVERLAY */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                  {/* color normalizer */}
+                    <div className="absolute inset-0 bg-black/40"></div>
 
+                  {/* unified gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+                
                 </div>
 
                   <span className="inline-block text-xs px-3 py-1 rounded-full bg-red-500/10 text-red-400 mb-4">
@@ -822,7 +825,7 @@ if (!mounted) return null;
 
                   {/* DESCRIPTION */}
 
-                  <p className="text-white/60 text-sm mb-6">
+                  <p className="text-white/70 text-sm mb-6">
                     {project.description}
                   </p>
 
@@ -868,6 +871,7 @@ if (!mounted) return null;
                   </div>
 
                 </motion.div>
+              
 
               ))}
 
