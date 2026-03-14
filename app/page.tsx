@@ -142,7 +142,7 @@ export default function Home() {
   const [index, setIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [charIndex, setCharIndex] = useState(0);
-  
+  const [loading, setLoading] = useState(false);
   const titles = [
     "Computer Engineer",
   ];
@@ -179,7 +179,7 @@ useEffect(() => {
 if (!mounted) return null;
 
   return (
-    <main className="relative w-full min-h-screen bg-black text-white overflow-y-hidden pt-28 scroll-smooth">
+    <main className="relative w-full min-h-screen bg-black text-white pt-28 scroll-smooth">
 
       <div className="relative z-10 flex flex-col">
 
@@ -188,7 +188,7 @@ if (!mounted) return null;
 
           <div className="max-w-7xl mx-auto flex items-center justify-between px-8 md:px-24 py-6">
 
-            <div className="flex gap-10 text-sm tracking-wide items-center ml-2">
+            <div className="hidden md:flex gap-10 text-sm tracking-wide items-center ml-2">
             
                 <a
                   href="#home"
@@ -232,7 +232,7 @@ if (!mounted) return null;
 
             <a
               href="#contact"
-              className="px-6 py-2 border border-white/30 rounded-full text-sm ml-auto
+              className="px-4 py-2 md:px-6 border border-white/30 rounded-full text-xs md:text-sm ml-auto
               hover:border-red-500 hover:text-red-400
               hover:shadow-[0_0_12px_rgba(255,0,0,0.5)]
               transition duration-300"
@@ -246,9 +246,9 @@ if (!mounted) return null;
 
         {/* HERO */}
         <section id="home" className="scroll-mt-28">
-          <div className="flex items-start pt-20 px-8 md:px-24 min-h-screen">
+          <div className="flex items-start pt-12 md:pt-20 px-6 md:px-24 min-h-screen">
 
-            <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-28 items-center w-full">
+            <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 md:gap-28 items-center w-full">
 
               {/* LEFT SIDE */}
               <div>
@@ -290,7 +290,7 @@ if (!mounted) return null;
               {/* RIGHT SIDE PROFILE */}
               <div className="flex justify-center">
 
-                <div className="relative w-[320px] h-[320px] flex items-center justify-center">
+                <div className="relative w-[240px] h-[240px] md:w-[320px] md:h-[320px] flex items-center justify-center mx-auto">
 
                   {/* RED GLOW */}
                   <div className="absolute w-[300px] h-[300px] rounded-full bg-red-500/20 blur-3xl"></div>
@@ -300,7 +300,7 @@ if (!mounted) return null;
                   shadow-[0_0_0px_rgba(255,0,0,0),0_0_0px_rgba(255,0,0,0)]"></div>
 
                   {/* PROFILE IMAGE */}
-                  <div className="relative w-[240px] h-[240px] rounded-full overflow-hidden border border-white/20 z-10">
+                  <div className="relative w-[180px] h-[180px] md:w-[240px] md:h-[240px] rounded-full overflow-hidden border border-white/20 z-10">
                   
                       <Image
                         src="/myphoto.jpeg"
@@ -313,7 +313,7 @@ if (!mounted) return null;
 
 
                   {/* ICON ORBIT */}
-                <div className="absolute w-[340px] h-[340px] animate-spin-slow pointer-events-none">
+                <div className="absolute w-[260px] h-[260px] md:w-[340px] md:h-[340px] animate-spin-slow pointer-events-none">
 
                   {/* REACT */}
                   <div className="absolute top-1 left-1/2 -translate-x-1/2">
@@ -572,7 +572,7 @@ if (!mounted) return null;
 
           {/* GRID */}
 
-          <div className="grid md:grid-cols-3 gap-10">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-10">
 
 
             {/* ================= FRONTEND ================= */}
@@ -945,7 +945,7 @@ if (!mounted) return null;
 
       <div className="max-w-6xl mx-auto px-6 md:px-16">
 
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
 
           {/* LEFT SIDE */}
 
@@ -1139,7 +1139,7 @@ if (!mounted) return null;
 
             <div className="absolute inset-0 rounded-2xl bg-red-500/10 blur-3xl pointer-events-none"></div>
 
-            <div className="relative bg-[#0b0b0b] border border-red-500/20 rounded-2xl p-10 shadow-[0_0_30px_rgba(255,0,0,0.08)]">
+            <div className="relative bg-[#0b0b0b] border border-red-500/20 rounded-2xl p-6 md:p-10 shadow-[0_0_30px_rgba(255,0,0,0.08)]">
             
               {sent ? (
                 <div className="text-center py-20">
@@ -1156,14 +1156,24 @@ if (!mounted) return null;
                   onSubmit={(e) => {
                     e.preventDefault();
 
+                    const form = e.target;
+
                     emailjs.sendForm(
                       "service_d8mil0r",
                       "template_w0krleb",
-                      e.target,
+                      form,
                       "LwHhZMH82Vjiyvioz"
                     ).then(
                       () => {
                         setSent(true);
+
+                        // clear inputs
+                        form.reset();
+
+                        // return to form after 3 seconds
+                        setTimeout(() => {
+                          setSent(false);
+                        }, 3000);
                       },
                       (error) => {
                         console.log(error);
@@ -1199,7 +1209,7 @@ if (!mounted) return null;
                   <button
                     type="submit"
                     className="w-full bg-red-600 hover:bg-red-500 hover:shadow-[0_0_20px_rgba(255,0,0,0.4)]
-                    text-white py-3 rounded-lg transition font-medium cursor-pointer"
+                    text-white py-3 rounded-lg transition font-medium cursor-pointer "
                   >
                     Send Message
                   </button>
@@ -1222,7 +1232,7 @@ if (!mounted) return null;
       {showTop && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-8 right-8 z-50 w-12 h-12 rounded-full
+          className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-50 w-11 h-11 md:w-12 md:h-12 rounded-full
           bg-red-600 hover:bg-red-500
           flex items-center justify-center
           shadow-[0_0_20px_rgba(255,0,0,0.4)]
