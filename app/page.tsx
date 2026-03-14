@@ -9,7 +9,7 @@ import emailjs from "@emailjs/browser";
 
   function OrbitIcon({ src, size = 20 }: { src: string; size?: number }) {
     return (
-      <div className="w-10 h-10 rounded-full bg-black border border-red-500/60
+      <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-black border border-red-500/60
       flex items-center justify-center
       shadow-[0_0_15px_rgba(255,0,0,0.6)]">
 
@@ -293,7 +293,7 @@ if (!mounted) return null;
                 <div className="relative w-[240px] h-[240px] md:w-[320px] md:h-[320px] flex items-center justify-center mx-auto">
 
                   {/* RED GLOW */}
-                  <div className="absolute w-[300px] h-[300px] rounded-full bg-red-500/20 blur-3xl"></div>
+                  <div className="absolute w-[320px] h-[320px] md:w-[360px] md:h-[360px] rounded-full bg-red-500/20 blur-3xl"></div>
 
                   {/* black RING */}
                   <div className="absolute w-[300px] h-[300px] rounded-full border-[1px] border-black
@@ -313,7 +313,7 @@ if (!mounted) return null;
 
 
                   {/* ICON ORBIT */}
-                <div className="absolute w-[260px] h-[260px] md:w-[340px] md:h-[340px] animate-spin-slow pointer-events-none">
+                <div className="absolute w-[300px] h-[300px] md:w-[340px] md:h-[340px] animate-spin-slow pointer-events-none">
 
                   {/* REACT */}
                   <div className="absolute top-1 left-1/2 -translate-x-1/2">
