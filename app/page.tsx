@@ -252,7 +252,13 @@ if (!mounted) return null;
         </div>
 
         {menuOpen && (
-          <div className="md:hidden fixed top-20 left-0 w-full bg-black border-b border-white/10 z-40">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.35, ease: "easeOut" }}
+            className="md:hidden fixed top-20 left-0 w-full bg-black/95 backdrop-blur-md border-b border-white/10 z-40"
+           >
 
             <div className="flex flex-col items-center gap-8 py-8 text-sm">
 
@@ -301,9 +307,9 @@ if (!mounted) return null;
                 <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-red-500 transition-all duration-300 ease-out group-hover:w-full"></span>
               </a>
 
-            </div>
+            </div>         
 
-          </div>
+          </motion.div>
         )}
 
 
