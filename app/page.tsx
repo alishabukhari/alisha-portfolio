@@ -105,6 +105,15 @@ export default function Home() {
     tech: ["CSS", "Next.js", "TailwindCSS"],
     github: "https://github.com/alishabukhari/alisha-portfolio",
     
+  },
+  {
+    title: "To-Do App",
+    tag: "Internship Task",
+    image: "/projects/todo.png",
+    description: "Minimal task management app built with HTML, CSS, and JavaScript.",
+    desc: "A lightweight task management interface developed as part of an internship assignment. The project features a clean mobile-inspired UI with card-based sections and a soft color palette to organize tasks efficiently.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    github: "https://github.com/alishabukhari/to-do"
   }
   ];
 
