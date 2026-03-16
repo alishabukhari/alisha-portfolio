@@ -36,7 +36,6 @@ body {
   animation: blob2 22s ease-in-out infinite;
 }
 
-
 body {
   background: #070B1A;
 }
@@ -71,11 +70,5 @@ html, body {
   overflow-x: hidden;
 }
 
-body {
-  overflow-x: hidden;
-}
 
-html, body {
-  overflow-x: hidden;
-}
 

@@ -189,7 +189,7 @@ useEffect(() => {
 if (!mounted) return null;
 
   return (
-    <main className="relative w-full min-h-[100vh] overflow-y-hidden bg-black text-white pt-28 scroll-smooth">
+    <main className="relative w-full min-h-[100vh] bg-black text-white overflow-y-hidden pt-28 scroll-smooth">
 
       <div className="relative z-10 flex flex-col">
 
